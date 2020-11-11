@@ -8,7 +8,7 @@ const bookSchema = new Schema(
       type: String
     },
     authors: {
-      type: Array
+      type: [String]
     },
     description: {
       type: String
