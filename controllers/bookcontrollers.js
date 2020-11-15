@@ -15,6 +15,15 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByTitle: function(req, res) {
+    db.Book.findOne({ title: req.params.title }).then(book => {
+      if (book) {
+        return res.json(true);
+      } else {
+        return res.json(false);
+      }
+    });
+  },
   create: function(req, res) {
     db.Book
       .create(req.body)
